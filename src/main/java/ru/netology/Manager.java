@@ -11,8 +11,8 @@ public class Manager {
         this.id = 0;
     }
 
-    public Manager(int idMaxA) {
-        this.idMax = idMaxA;
+    public Manager(int idMax) {
+        this.idMax = idMax;
         this.cinema = new Cinema[this.idMax];
         this.id = 0;
     }
@@ -25,6 +25,15 @@ public class Manager {
     }
 
     public Cinema[] getAll() {
+        for (int i = 0; i < idMax; i++) {
+            if (cinema[i] == null) {
+                Cinema[] tmp = new Cinema[i];
+                for (int count = 0; count < i; count++) {
+                    tmp[count] = cinema[count];
+                }
+                return tmp;
+            }
+        }
         return cinema;
     }
 

@@ -108,5 +108,29 @@ class ManagerTest {
         Cinema[] expected = new Cinema[]{cinema3, cinema2, cinema1, cinema};
         assertArrayEquals(expected, actual);
     }
-
+    @Test
+    public void Test6() {
+        Cinema cinema = new Cinema("", "", 2000, 10);
+        Cinema cinema1 = new Cinema("", "", 2000, 10);
+        Manager manager = new Manager(3);
+        manager.addCinema(cinema);
+        manager.addCinema(cinema1);
+        Cinema[] actual = manager.getAll();
+        Cinema[] expected = new Cinema[]{cinema, cinema1};
+        assertArrayEquals(expected, actual);
+    }
+    @Test
+    public void Test7() {
+        Cinema cinema = new Cinema("", "", 2000, 10);
+        Cinema cinema1 = new Cinema("", "", 2000, 10);
+        Cinema cinema2 = new Cinema("", "", 2000, 10);
+        Manager manager = new Manager(3);
+        manager.addCinema(cinema);
+        manager.addCinema(cinema1);
+        manager.addCinema(cinema2);
+        Cinema[] actual = manager.getAll();
+        Cinema[] expected = new Cinema[]{cinema, cinema1,cinema2};
+        assertArrayEquals(expected, actual);
+    }
 }
+
