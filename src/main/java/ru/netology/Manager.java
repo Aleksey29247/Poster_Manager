@@ -46,6 +46,29 @@ public class Manager {
         return tmp;
     }
 
+    public Cinema[] findLast() {
+        int lessMax = 0;
+        if (idMax >= 10)
+            lessMax = 10;
+        else
+            lessMax = idMax;
+        Cinema[] tmp = new Cinema[id];
+        for (int i = 0; i < id; i++) {
+            int index = cinema.length - i - 1;
+            if (i <= lessMax) {
+                tmp[i] = cinema[index];
+
+            } else {
+                Cinema[] tmp1 = new Cinema[lessMax];
+                for (int j = 0; j <= lessMax - 1; j++) {
+                    tmp1[j] = tmp[j];
+                }
+                return tmp1;
+            }
+        }
+        return tmp;
+    }
+
     public Cinema[] getRevers(int ids) {
         Cinema[] tmp = new Cinema[id];
         for (int i = 0; i < ids; i++) {
