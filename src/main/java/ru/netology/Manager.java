@@ -47,24 +47,19 @@ public class Manager {
     }
 
     public Cinema[] findLast() {
-        int LimitedMax = 0;
-        if (limitedRecord >= 10) {
-            LimitedMax = 10;
+        int limitedMax = 0;
+        if (id < limitedRecord) {
+            limitedMax = cinema.length - (limitedRecord - id);
         } else {
-            LimitedMax = limitedRecord;
+            limitedMax = cinema.length;
         }
-        Cinema[] tmp = new Cinema[id];
-        for (int i = 0; i < id; i++) {
-            int index = cinema.length - i - 1;
-            if (i <= LimitedMax) {
+        Cinema[] tmp = new Cinema[limitedMax];
+        for (int i = 0; i <= limitedRecord - 1; i++) {
+            int index = limitedMax - i - 1;
+
+            if (i <= id - 1) {
                 tmp[i] = cinema[index];
 
-            } else {
-                Cinema[] tmp1 = new Cinema[LimitedMax];
-                for (int j = 0; j <= LimitedMax - 1; j++) {
-                    tmp1[j] = tmp[j];
-                }
-                return tmp1;
             }
         }
         return tmp;

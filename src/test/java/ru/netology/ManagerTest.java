@@ -118,9 +118,6 @@ class ManagerTest {
     @Test
     public void testShowFindLastMaxIdCinema1() {
         Manager manager = new Manager(13);
-        manager.addCinema(cinema);
-        manager.addCinema(cinema1);
-        manager.addCinema(cinema2);
         manager.addCinema(cinema3);
         manager.addCinema(cinema4);
         manager.addCinema(cinema5);
